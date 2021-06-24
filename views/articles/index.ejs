@@ -1,0 +1,30 @@
+<%- include('../partials/header') -%>
+
+<div class="p-5 mb-4 bg-light rounded-3">
+    <div class="container-fluid py-5">
+      <h1 class="display-5 fw-bold">Fauci</h1>
+      <p id="description" class="col-md-8 fs-4">Fetch content using the YouTube, Reddit, and Tiktok APIs.</p>
+      <form action="/" method="POST">
+        <input type="text" class="form-control mb-3" name="searchQuery" placeholder="How to get my life together...">
+        <button class="btn btn-primary btn-lg" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+
+<div class="p-5 pt-2">
+  <div class="container-fluid">
+
+    <% if(searchQuery) { %>
+      <h1 class="mb-4">Results for "<%= searchQuery %>"</h1>
+    <% } %>
+
+    <div id="results"></div>
+  </div>
+</div>
+
+<!-- API data -->
+<input type="hidden" id="stringYoutubeData" value="<%= stringYoutubeData %>">
+<input type="hidden" id="stringRedditData" value="<%= stringRedditData %>">
+<input type="hidden" id="stringTiktokData" value="<%= stringTiktokData %>">
+
+<%- include('../partials/footer') -%>

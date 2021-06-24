@@ -1,0 +1,22 @@
+iframe {
+    width: 36%;
+    vertical-align: middle;
+    margin: 1.5rem;
+}
+
+#tiktok-embed {
+    width: 40%;
+}
+
+body {
+    text-align: center;
+}
+
+#description {
+    margin: 1rem auto;
+}
+
+.form-control {
+    width: 25%;
+    margin: auto;
+}
