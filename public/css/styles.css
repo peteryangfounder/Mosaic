@@ -14,7 +14,7 @@ iframe {
 }
 
 .form-control {
-    width: 40%;
+    width: 30%;
     margin: auto;
 }
 
@@ -46,13 +46,6 @@ h1 {
 .form-check-input:checked {
     background-color: #7749F8;
     border-color: #7749F8;
-}
-
-#maxPostsPerPlatform {
-    display: inline;
-    position: absolute;
-    margin-left: 7.5rem;
-    margin-top: 0.75rem;
 }
 
 .btn {
