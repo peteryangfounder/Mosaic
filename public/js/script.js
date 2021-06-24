@@ -16,11 +16,21 @@ let youtubeVideo = '';
 let redditPost = '';
 let tiktokVideo = '';
 
+// Loading spinner
+const spinner = document.querySelector('.spinner-border');
+spinner.style.visibility = 'visible';
+
+
 // Loop through data and display
 let i = 0;
 
 function displayMedia() {
     setTimeout(function() {
+
+        // Set spinner back to hidden
+        if (spinner.style.visibility = 'visible')
+            spinner.style.visibility = 'hidden';
+            
         if (youtubeData.items[i]) {
             youtubeVideo = `
                 <iframe height="315" src="https://www.youtube.com/embed/${youtubeData.items[i].id.videoId}" title="YouTube video player" 

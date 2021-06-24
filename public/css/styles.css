@@ -1,3 +1,8 @@
+body {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+}
+
 iframe {
     width: 36%;
     vertical-align: middle;
@@ -8,15 +13,88 @@ iframe {
     width: 40%;
 }
 
-body {
-    text-align: center;
+.form-control {
+    width: 40%;
+    margin: auto;
+}
+
+#hero {
+    background-color: #1778F2;
+    color: white;
+}
+
+h1 {
+    font-size: 4rem;
+    font-weight: bold;
 }
 
 #description {
-    margin: 1rem auto;
+    font-size: 1.5rem;
 }
 
-.form-control {
-    width: 25%;
-    margin: auto;
+#search {
+    text-align: center;
+    background-color: #F8F9FA;
+}
+
+.form-check {
+    padding: 1rem 1.75rem;
+    margin-left: 1.5rem;
+    margin-right: 0.25rem;
+}
+
+.form-check-input:checked {
+    background-color: #7749F8;
+    border-color: #7749F8;
+}
+
+#maxPostsPerPlatform {
+    display: inline;
+    position: absolute;
+    margin-left: 7.5rem;
+    margin-top: 0.75rem;
+}
+
+.btn {
+    background-color: #7749F8;
+    color: white;
+}
+
+.btn:hover {
+    background: white;
+    color: #7749F8;
+    border-color: #7749F8;
+}
+
+p {
+    color: #ABB5BE;
+    line-height: 1;
+    margin-top: 1rem;
+}
+
+#content {
+    height: 40rem;
+}
+
+footer {
+    background-color: #343A40;
+    color: #ABB5BE;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.75rem;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.spinner-border {
+    position: absolute;
+    left: 50%;
+    margin-top: 10%;
+    visibility: hidden;
+}
+
+h2 {
+    font-weight: bold;
 }

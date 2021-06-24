@@ -1,30 +1,78 @@
 <%- include('../partials/header') -%>
+<div id="hero" class="p-5">
+   <div class="container-fluid p-5">
+      <div class="row">
 
-<div class="p-5 mb-4 bg-light rounded-3">
-    <div class="container-fluid py-5">
-      <h1 class="display-5 fw-bold">Fauci</h1>
-      <p id="description" class="col-md-8 fs-4">Fetch content using the YouTube, Reddit, and Tiktok APIs.</p>
-      <form action="/" method="POST">
-        <input type="text" class="form-control mb-3" name="searchQuery" placeholder="How to get my life together...">
-        <button class="btn btn-primary btn-lg" type="submit">Search</button>
-      </form>
-    </div>
-  </div>
+         <div class="col-md-6 m-auto">
+            <h1>Waste time more efficiently</h1>
+            <span id="description">Browse YouTube, Reddit, and TikTok all at the same time.</span>
+         </div>
 
-<div class="p-5 pt-2">
-  <div class="container-fluid">
+         <div class="col-md-6">
+          <img src="images/hero-illustration.png" class="img-fluid" alt="Illustration of man and woman looking at phone">
+         </div>
 
-    <% if(searchQuery) { %>
-      <h1 class="mb-4">Results for "<%= searchQuery %>"</h1>
-    <% } %>
+      </div>
+   </div>
+</div>
 
-    <div id="results"></div>
+
+<div id="search" class="p-5">
+  <div class="container-fluid p-5">
+    <h2>Enter your search query</h2>
+
+
+        <div class="form-check form-check-inline">
+          <input checked class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+          <label class="form-check-label" for="inlineCheckbox1">YouTube</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input checked class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+          <label class="form-check-label" for="inlineCheckbox2">Reddit</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input checked class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+          <label class="form-check-label" for="inlineCheckbox2">TikTok</label>
+        </div>
+  
+
+        <div id="maxPostsPerPlatform">
+          <label class="form-check-label">Max Posts Per Platform</label>
+          <select class="form-select form-select-sm d-inline w-auto">
+            <option selected value="2">2</option>
+          </select>
+        </div>
+
+
+    <form action="/" method="POST">
+      <input type="text" class="form-control d-inline" name="searchQuery" placeholder="how to code...">
+      <button class="btn mb-1" type="submit">Let’s go!</button>
+    </form>
+
+    <p>type * for random</p>
+    <p>type $ for trending</p>
+
   </div>
 </div>
+
+
+<div id="content" class="p-5 pt-2">
+   <div class="container-fluid p-5">
+      <% if(searchQuery) { %>
+      <h2 class="mb-4 text-center">Results for "<%= searchQuery %>"</h2>
+      <% } %>
+      <div id="results" class="text-center">
+        <div class="spinner-border text-primary" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+   </div>
+</div>
+
+<footer>© 2021 Peter Yang</footer>
 
 <!-- API data -->
 <input type="hidden" id="stringYoutubeData" value="<%= stringYoutubeData %>">
 <input type="hidden" id="stringRedditData" value="<%= stringRedditData %>">
 <input type="hidden" id="stringTiktokData" value="<%= stringTiktokData %>">
-
 <%- include('../partials/footer') -%>
