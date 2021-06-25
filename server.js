@@ -14,12 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 app.use(methodOverride('_method'));
 
-// mongoose.connect(process.env.DATABASE_URL, {
-// 	useNewUrlParser: true,
-// 	useUnifiedTopology: true
-// });
-
-mongoose.connect('mongodb://localhost:27017/mosaicDB', {
+mongoose.connect(process.env.DATABASE_URL, {
 	useNewUrlParser: true,
 	useUnifiedTopology: true
 });
