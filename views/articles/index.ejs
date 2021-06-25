@@ -21,29 +21,53 @@
   <div class="container-fluid p-5">
     <h2>Enter your search query</h2>
 
-
-        <div class="form-check form-check-inline">
-          <input checked class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-          <label class="form-check-label" for="inlineCheckbox1">YouTube</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input checked class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-          <label class="form-check-label" for="inlineCheckbox2">Reddit</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input checked class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-          <label class="form-check-label" for="inlineCheckbox2">TikTok</label>
-        </div>
-  
-        <div class="mb-3">
-          <label class="form-check-label">Max Posts Per Platform</label>
-          <select class="form-select form-select-sm d-inline w-auto">
-            <option selected value="2">2</option>
-          </select>
-        </div>
-
     <form action="/" method="POST">
-      <input type="text" class="form-control d-inline" name="searchQuery" placeholder="how to code...">
+
+      <div class="form-check form-check-inline">
+        <% if (settings.selectedPlatforms[0]) { %>
+          <input checked class="form-check-input" type="checkbox" name="youtubeCheckbox" id="youtubeCheckbox">
+        <% } else { %>
+          <input class="form-check-input" type="checkbox" name="youtubeCheckbox" id="youtubeCheckbox">
+        <% } %>
+        <label class="form-check-label" for="youtubeCheckbox">YouTube</label>
+      </div>
+
+      <div class="form-check form-check-inline">
+        <% if (settings.selectedPlatforms[1]) { %>
+          <input checked class="form-check-input" type="checkbox" name="redditCheckbox" id="redditCheckbox">
+        <% } else { %>
+          <input class="form-check-input" type="checkbox" name="redditCheckbox" id="redditCheckbox">
+        <% } %>
+        <label class="form-check-label" for="redditCheckbox">Reddit</label>
+      </div>
+
+      <div class="form-check form-check-inline">
+        <% if (settings.selectedPlatforms[2]) { %>
+          <input checked class="form-check-input" type="checkbox" name="tiktokCheckbox" id="tiktokCheckbox">
+        <% } else { %>
+          <input class="form-check-input" type="checkbox" name="tiktokCheckbox" id="tiktokCheckbox">
+        <% } %>
+        <label class="form-check-label" for="tiktokCheckbox">TikTok</label>
+      </div>
+
+
+
+      <div class="mb-3">
+        <label class="form-check-label">Max Posts Per Platform</label>
+        <select name="maxPostsPerPlatform" class="form-select form-select-sm d-inline w-auto">
+          
+          <% for (i = 1; i <= 20; i++) { %>
+            <% if (i === settings.maxPostsPerPlatform) {  %>
+              <option selected value="<%= i %>"><%= i %></option>
+            <% } else { %>
+              <option value="<%= i %>"><%= i %></option>
+            <% } %>
+          <% } %>
+
+        </select>
+      </div>
+
+      <input required type="text" class="form-control d-inline" name="searchQuery" placeholder="how to code...">
       <button class="btn mb-1" type="submit">Let’s go!</button>
     </form>
 
@@ -57,7 +81,11 @@
 <div id="content" class="p-5 pt-2">
    <div class="container-fluid p-5">
       <% if(searchQuery) { %>
-      <h2 class="mb-4 text-center">Results for "<%= searchQuery %>"</h2>
+        <% if (searchQuery === "$") { %>
+          <h2 class="mb-4 text-center">Trending results</h2>
+        <% } else { %>
+          <h2 class="mb-4 text-center">Results for "<%= searchQuery %>"</h2>
+        <% } %>
       <% } %>
       <div id="results" class="text-center">
         <div class="spinner-border text-primary" role="status">
