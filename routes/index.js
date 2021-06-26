@@ -93,7 +93,7 @@ router.get('/', async (req, res) => {
 					searchQuery = 'trending';
 
 				// Get parsed data from Tiktok scraper
-				parsedTiktokData = await TikTokScraper.hashtag(searchQuery, {
+				parsedTiktokData = await TikTokScraper.user(searchQuery, {
 					number: maxResults,
 					sessionList: ['sid_tt=58ba9e34431774703d3c34e60d584475;']
 				});
