@@ -95,12 +95,7 @@ router.get('/', async (req, res) => {
 				// Get parsed data from Tiktok scraper
 				parsedTiktokData = await TikTokScraper.hashtag(searchQuery, {
 					number: maxResults,
-					sessionList: ['sid_tt=58ba9e34431774703d3c34e60d584475;'],
-					headers: {
-						'user-agent': "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4243.185 Safari/537.36",
-						referer: "https://www.tiktok.com/",
-						cookie: "sid_tt=58ba9e34431774703d3c34e60d584475; tt_webid_v2=6977936680062993925; tt_webid=6977936680062993925; tt_csrf_token=xcC8mJwmM7f2-YxNEYmXoJyw; bm_sz=D157136D1C710502802077A4724C7478~YAAQkVYhFwfaQw16AQAAjy9TRgzzAeLemjiGf4vmWBHBDMtjgeoindMqUgNdX1tYMR3ceWQ13saoqvhho4TXLaSXhmTvcoH28w0OGbrctvx95+0+FjOrQlZ20qnq7pDH7l3kyCps8FNi30+JJDvmuaIOdD6k9+F2EfdTvNG7j7YDhgKjK0rC6ovNRgN1Ns6d; _abck=98A023248F633EB608BEA6D8F0080C3D~-1~YAAQkVYhFwjaQw16AQAAjy9TRgYBK/gJo8MX8op0tCJxpkWAcO1HfiHuH+JVGztlMhBzV17hcBEI/ufcziqZ8VQJOjk/T9343fZS1ALhW1NgSBdMYNqFknm+jxjy5aqspAegcdW7PsO5pSCq5H78Q4VqkNxRud/YdDmDUmyKW1cs65VoxXBMVtHPv1yir/Inn7wpJyalZ8nZQtDTTKu4oIRfb+uUQvo+usSn3gjuDGM89oNyBjq4J14Q3gyrMsq4l3Rz0AalRpYI2yzxE8ddbbPz/+P30p3f810lO+zCdM7uMrQq5oSaP77WbxZk6AjxO8qZti67HdpfxIy1gWI6EfTNR8NHYhpT1SR9wYq1G6K7wieP4T9Y1XvGaig=~-1~-1~-1"
-					}
+					sessionList: ['sid_tt=58ba9e34431774703d3c34e60d584475;']
 				});
 				
 				// Stringify data to be passed to EJS template
