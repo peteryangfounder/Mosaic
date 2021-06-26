@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+   <!-- Head specifies metadata about page -->
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <!-- Title that appears in tab -->
+      <title>Mosaic</title>
+
+      <!-- Favicon that appears in tab -->
+      <link rel="icon" type="image/png" href="images/favicon.png"/>
+
+      <!-- Bootstrap front-end library -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+      
+      <!-- Custom font via Google Fonts -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+
+      <!-- Custom CSS stylesheet -->
+      <link rel="stylesheet" href="css/styles.css">
+   </head>
+
+   <!-- Body includes main content of page -->
+   <body>
+      <!-- Navigation bar with logo -->
+      <nav class="navbar">
+         <div class="container">
+            <a class="navbar-brand" href="/">
+               <img src="images/mosaic-logo.png" alt="Mosaic logo" width="160" height="48">
+            </a>
+         </div>
+      </nav>
+
+      <!-- Hero section -->
+      <div id="hero">
+         <div>
+            <div class="row">
+               <!-- Hero text -->
+               <div class="m-auto">
+                  <h1>Waste time more efficiently</h1>
+                  <span id="description">Browse YouTube, Reddit, and TikTok all at the same time.</span>
+               </div>
+               <!-- Hero image -->
+               <div>
+                  <img src="images/hero-illustration.png" class="img-fluid" alt="Illustration of man and woman looking at phone">
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <!-- Section where user can enter a search query -->
+      <div id="search">
+         <div>
+            <!-- Call-to-action -->
+            <h2>Enter your search query</h2>
+
+            <!-- Form to capture user inputs -->
+            <form action="/" method="POST">
+
+               <!-- YouTube checkbox -->
+               <div class="form-check">
+                  <% if (settings.selectedPlatforms[0]) { %>
+                     <input checked type="checkbox" name="youtubeCheckbox" id="youtubeCheckbox">
+                  <% } else { %>
+                     <input type="checkbox" name="youtubeCheckbox" id="youtubeCheckbox">
+                  <% } %>
+                  <label for="youtubeCheckbox">YouTube</label>
+               </div>
+
+               <!-- Reddit checkbox -->
+               <div class="form-check">
+                  <% if (settings.selectedPlatforms[1]) { %>
+                     <input checked type="checkbox" name="redditCheckbox" id="redditCheckbox">
+                  <% } else { %>
+                     <input type="checkbox" name="redditCheckbox" id="redditCheckbox">
+                  <% } %>
+                  <label for="redditCheckbox">Reddit</label>
+               </div>
+
+               <!-- TikTok checkbox -->
+               <div class="form-check">
+                  <% if (settings.selectedPlatforms[2]) { %>
+                     <input checked type="checkbox" name="tiktokCheckbox" id="tiktokCheckbox">
+                  <% } else { %>
+                     <input type="checkbox" name="tiktokCheckbox" id="tiktokCheckbox">
+                  <% } %>
+                  <label for="tiktokCheckbox">TikTok</label>
+               </div>
+
+               <!-- Max Posts Per Platform Dropdown -->
+               <div class="mb-3">
+                  <label>Max Posts Per Platform</label>
+                  <select name="maxPostsPerPlatform" class="form-select form-select-sm">
+                     <!-- For loop to display options -->
+                     <% for (i = 1; i <= 20; i++) { %>
+                        <% if (i === settings.maxPostsPerPlatform) {  %>
+                           <!-- Selected option -->
+                           <option selected ><%= i %></option>
+                        <% } else { %>
+                           <option><%= i %></option>
+                        <% } %>
+                     <% } %>
+                  </select>
+               </div>
+
+               <!-- Input field to type search query -->
+               <input required type="text" class="form-control" name="searchQuery" placeholder="how to code...">
+
+               <!-- Button to submit search query -->
+               <button class="btn mb-1" type="submit">Let’s go!</button>
+            </form>
+
+            <!-- Special commands user can try -->
+            <p>type * for random</p>
+            <p>type $ for trending</p>
+         </div>
+      </div>
+
+      <!-- Section to display returned content -->
+      <div id="content">
+         <div>
+            <% if (searchQuery) { %>
+               <% if (searchQuery === "$") { %>
+                  <!-- Special header for trending results -->
+                  <h2>Trending results</h2>
+               <% } else { %>
+                  <!-- Otherwise, header indicates what was searched for -->
+                  <h2>Results for "<%= searchQuery %>"</h2>
+               <% } %>
+            <% } %>
+            <!-- Embeds are inserted into this div -->
+            <div id="results">
+               <!-- Loading spinner while data is being fetched -->
+               <div class="spinner-border text-primary" role="status"></div>
+            </div>
+         </div>
+      </div>
+      
+      <!-- API data -->
+      <input type="hidden" class="string-data" value="<%= stringYoutubeData %>">
+      <input type="hidden" class="string-data" value="<%= stringRedditData %>">
+      <input type="hidden" class="string-data" value="<%= stringTiktokData %>">
+
+      <!-- Sticky copyright footer -->
+      <footer>© 2021 Peter Yang</footer>
+
+      <!-- Bootstrap library script -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+      <!-- jQuery -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      
+      <!-- Load custom script if there is a search query -->
+      <% if (searchQuery) { %>
+         <script src="js/script.js"></script>
+      <% } %>
+
+   </body>
+</html>

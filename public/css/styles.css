@@ -1,62 +1,31 @@
+/* Custom font and weight applied to body */
 body {
     font-family: 'Inter', sans-serif;
     font-weight: 300;
 }
 
-iframe {
-    width: 36%;
-    vertical-align: middle;
-    margin: 1.5rem;
+/* Extra padding on select div elements */
+body > div[id], body > div[id] > div {
+    padding: 3rem;
 }
 
-#tiktok-embed {
-    width: 40%;
+/* Media query for mobile responsiveness */
+@media only screen and (min-width: 768px) {
+    .row div {
+        width: 50%;
+    }
 }
 
-.form-control {
-    width: 30%;
-    margin: auto;
-}
-
-#hero {
-    background-color: #1778F2;
-    color: white;
-}
-
+/* Text styling */
 h1 {
-    font-size: 4rem;
     font-weight: bold;
+    font-size: 4rem;
 }
 
-#description {
-    font-size: 1.5rem;
-}
-
-#search {
+h2 {
     text-align: center;
-    background-color: #F8F9FA;
-}
-
-.form-check {
-    padding: 1rem 1.75rem;
-    margin-left: 1.5rem;
-    margin-right: 0.25rem;
-}
-
-.form-check-input:checked {
-    background-color: #7749F8;
-    border-color: #7749F8;
-}
-
-.btn {
-    background-color: #7749F8;
-    color: white;
-}
-
-.btn:hover {
-    background: white;
-    color: #7749F8;
-    border-color: #7749F8;
+    font-weight: bold;
+    margin-bottom: .5rem;
 }
 
 p {
@@ -65,29 +34,112 @@ p {
     margin-top: 1rem;
 }
 
-#content {
-    height: 40rem;
+/* Checkbox styling */
+input[type=checkbox] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-print-color-adjust: exact;
+    float: left;
+    width: 1em;
+    height: 1em;
+    border: 1px solid rgba(0,0,0,.25);
+    border-radius: .25em;
+    margin-top: .25em;
+    margin-left: -1.5em;
 }
 
+/* Checkbox styling when checked */
+input[type=checkbox]:checked {
+    border-color: #7749F8;
+    background-color: #7749F8;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
+}
+
+/* Embedded content styling */
+iframe {
+    vertical-align: middle;
+    width: 36%;
+    margin: 1.5rem;
+}
+
+/* Make footer sticky */
 footer {
-    background-color: #343A40;
-    color: #ABB5BE;
-    text-align: center;
-    padding: 1rem;
-    font-size: 0.75rem;
     position: fixed;
+    text-align: center;
+    color: #ABB5BE;
+    background-color: #343A40;
+    font-size: .75rem;
+    width: 100%;
+    padding: 1rem;
     left: 0;
     bottom: 0;
-    width: 100%;
 }
 
+/* Button styling */
+.btn {
+    color: white;
+    background-color: #7749F8;
+}
+
+/* Button styling when hovered over */
+.btn:hover {
+    color: #7749F8;
+    border-color: #7749F8;
+    background-color: white;
+}
+
+/* Styling of form inputs */
+.form-check {
+    display: inline-block;
+    padding: 1rem 1.75rem;
+    margin-left: 1.5rem;
+    margin-right: .25rem;
+}
+
+.form-select {
+    display: inline;
+    width: auto;
+}
+
+.form-control {
+    display: inline;
+    width: 30%;
+}
+
+/* Center and hide loading spinner */
 .spinner-border {
     position: absolute;
+    visibility: hidden;
     left: 50%;
     margin-top: 10%;
-    visibility: hidden;
 }
 
-h2 {
-    font-weight: bold;
+/* Adjust width of Tiktok embed */
+.tiktok-embed {
+    width: 40%;
+}
+
+/* Hero section */
+#hero {
+    color: white;
+    background-color: #1778F2;
+}
+
+/* Hero description/tagline */
+#description {
+    font-size: 1.5rem;
+}
+
+/* Search query section */
+#search {
+    text-align: center;
+    background-color: #F8F9FA;
+}
+
+/* Content section */
+#content {
+    text-align: center;
+    height: 40rem;
+    padding-top: .5rem;
 }

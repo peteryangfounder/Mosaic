@@ -1,3 +1,5 @@
+# Gitignore specifies files that will not be committed due to privacy/irrelevance
+
 # Logs
 logs
 *.log
