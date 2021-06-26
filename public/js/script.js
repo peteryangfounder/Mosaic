@@ -73,9 +73,8 @@ if (youtubeData || redditData || tiktokData) {
             if (redditData && redditData.data.children[i]) {
                 // Construct Reddit post embed
                 redditPost = `
-                    <iframe class="border" src="https://www.redditmedia.com${redditData.data.children[i].data.permalink}
-                    ?ref_source=embed&amp;ref=share&amp;embed=true" sandbox="allow-presentation allow-scripts allow-same-origin allow-popups" 
-                    style="border: none;" height="315" scrolling="no"></iframe>
+                    <iframe class="border" src="https://www.redditmedia.com${redditData.data.children[i].data.permalink}?ref_source=embed&amp;ref=share&amp;embed=true" 
+                    sandbox="allow-presentation allow-scripts allow-same-origin allow-popups" style="border: none;" height="315" scrolling="no"></iframe>
                 `
 
                 // Insert embed into results section of page
@@ -86,8 +85,8 @@ if (youtubeData || redditData || tiktokData) {
             if (tiktokData && tiktokData.collector[i]) {
                 // Construct Tiktok video embed
                 tiktokVideo = `
-                    <iframe class="tiktok-embed" name="__tt_embed__v54746331796788450" src="https://www.tiktok.com/embed/v2/${tiktokData.collector[i].id}
-                    ?lang=en-US" style="height: 711px; visibility: unset; max-height: 711px;"></iframe>
+                    <iframe class="tiktok-embed" name="__tt_embed__v54746331796788450" src="https://www.tiktok.com/embed/v2/${tiktokData.collector[i].id}?lang=en-US" 
+                    style="height: 711px; visibility: unset; max-height: 711px;"></iframe>
                 `
 
                 // Insert embed into results section of page
