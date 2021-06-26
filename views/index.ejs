@@ -124,7 +124,7 @@
       <div id="content">
          <div>
             <% if (searchQuery) { %>
-               <% if (searchQuery === "$") { %>
+               <% if (searchQuery === "$" || searchQuery === "trending") { %>
                   <!-- Special header for trending results -->
                   <h2>Trending results</h2>
                <% } else { %>
