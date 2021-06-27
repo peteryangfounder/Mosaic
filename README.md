@@ -79,6 +79,9 @@ Here, too, external documentation could be added to the GitHub repository—look
 #### Demonstrated Products:
 * [Mosaic Completed Project](https://protected-cove-21401.herokuapp.com/)
 
+#### Video Walkthrough:
+https://www.loom.com/share/a9e3ef8defb44a33927db6986751be87
+
 ## Limitations/Challenges
 Overall, the project was a great success! All of the envisioned features were implemented, and better yet, implemented with *style*. 
 
