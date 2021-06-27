@@ -36,21 +36,27 @@ The goal with Unit 12 was to brush up on web development concepts—in preparati
 #### Demonstrated Products:
 * [Screenshot of Course Module Completion](https://github.com/peteryangfounder/Mosaic/blob/main/Screenshot%20of%20Course%20Module%20Completion.png)
 * [Completed Project](https://mysterious-woodland-97111.herokuapp.com/)
-* [Video Walkthrough](https://www.loom.com/share/083e26c05e4040c98397f5b181230318)
+
+#### Video Walkthrough:
+https://www.loom.com/share/083e26c05e4040c98397f5b181230318
 
 ### Unit 13: Experimenting with APIs
 The goal with Unit 13 was to test the YouTube, Reddit, and TikTok APIs by developing a watered down version of Mosaic. The envisioned application would be able to query for content by keyword, output the returned data to the console, and visually display the content to the user.
 
 #### Demonstrated Products:
 * [Completed Project](https://blooming-wave-19232.herokuapp.com/)
-* [Video Walkthrough](https://www.loom.com/share/0d8c34608c924417a7d43b2756fbba2a)
+
+#### Video Walkthrough:
+https://www.loom.com/share/0d8c34608c924417a7d43b2756fbba2a
 
 ### Unit 14: Designing with Figma
 The goal with Unit 14 was to design a high-fidelity mockup for Mosaic prior to implementing it with code. This way, the entire user interface could be laid out in advance, smoothening the development workflow.
 
 #### Demonstrated Products:
 * [Figma File](https://www.figma.com/file/0IXYGYOIt1iB0TKRptHGUe/ICS4U-Final-Project-Mosaic?node-id=0%3A1)
-* [Video Walkthrough](https://www.loom.com/share/27b019002b0f47c0913abdb211197005)
+
+#### Video Walkthrough:
+https://www.loom.com/share/27b019002b0f47c0913abdb211197005
 
 ### Unit 15: Software Development Process
 The goal with Unit 15 was to write up the Software Development Process (SWDP) document corresponding to the final project. This document would serve to gain a deeper insight into the project by distilling it into 6 distinct stages: Problem Definition, Analysis, Design, Implementation (left out for now), Testing/Verification, Maintenance.
@@ -74,7 +80,13 @@ Here, too, external documentation could be added to the GitHub repository—look
 * [Mosaic Completed Project](https://protected-cove-21401.herokuapp.com/)
 
 ## Limitations/Challenges
-Overall, the project was a great success! All of the envisioned features were implemented, and better yet, implemented with *style*. However, there was one major limitation/challenge that constantly arose during the development process (and which can be seen in the final application). That is: Mosaic relies on a third-party Tiktok scraper in order to fetch content, as the official TikTok API is too limited to achieve many of Mosaic's lofty goals. Since the scraper is managed by third-party developers and not the TikTok team, it has satisfactory but not solid reliability (it also causes a plethora of warnings to appear in the console). For example, some of the functions used to fetch content will, on occasion, stop working for no apparent reason. Specifically, they will continue to return an object from the server, but the collector array will be empty when data is to be expected. During the bulk of the development process, Mosaic used the ```TikTokScraper.hashtag``` function to fetch data based on a particular hashtag, such as #trending. However, at the point of deployment, this function spontaneously stopped working, and so the subordinate ```TikTokScraper.user``` function was resorted too instead. This means that, when a user types in a search query, Mosaic will try to find TikTok content that matches a username rather than a hastag, which is less than ideal.
+Overall, the project was a great success! All of the envisioned features were implemented, and better yet, implemented with *style*. 
+
+However, there was one major limitation/challenge that constantly arose during the development process (and which can be seen in the final application). That is: Mosaic relies on a third-party Tiktok scraper in order to fetch content, as the official TikTok API is too limited to achieve many of Mosaic's lofty goals. 
+
+Since the scraper is managed by third-party developers and not the TikTok team, it has satisfactory but not solid reliability (it also causes a plethora of warnings to appear in the console). For example, some of the functions used to fetch content will, on occasion, stop working for no apparent reason. Specifically, they will continue to return an object from the server, but the collector array will be empty when data is to be expected. 
+
+During the bulk of the development process, Mosaic used the ```TikTokScraper.hashtag``` function to fetch data based on a particular hashtag, such as #trending. However, at the point of deployment, this function spontaneously stopped working, and so the subordinate ```TikTokScraper.user``` function was resorted too instead. This means that, when a user types in a search query, Mosaic will try to find TikTok content that matches a username rather than a hastag, which is less than ideal.
 
 Another hiccup that appeared during development was that, since localhost is not a secure connection (by nature), the localhost version of Mosaic throws cookie-related errors in the console; however, these errors do not affect the behaviour of the application and disappear in the secure Heroku version.
 
@@ -102,6 +114,6 @@ DATABASE_URL=mongodb://localhost:27017/mosaicDB
 ```
 5. Start up the server by typing ```node server.js``` or ```nodemon server.js```
 6. Open up a web browser (preferably Google Chrome) and visit ```http://localhost:3000/```
-7. Tada! You can begin playing around with the application and wasting time more efficiently ;)
+7. Tada! 🌈
 <br>
 —Peter Yang, June 26, 2021
