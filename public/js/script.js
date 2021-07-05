@@ -49,11 +49,11 @@ if (youtubeData || redditData || tiktokData) {
             // If there is a YouTube video at index i...
             if (youtubeData && youtubeData.items[i]) {
                 let videoId;
-                
+
                 // Video ID for normal search queries
                 if (typeof youtubeData.items[i].id === 'object')
                     videoId = youtubeData.items[i].id.videoId;
-                
+
                 // Video ID when $ is search query
                 else
                     videoId = youtubeData.items[i].id;
@@ -85,9 +85,12 @@ if (youtubeData || redditData || tiktokData) {
             if (tiktokData && tiktokData.collector[i]) {
                 // Construct Tiktok video embed
                 tiktokVideo = `
-                    <iframe class="tiktok-embed" name="__tt_embed__v54746331796788450" src="https://www.tiktok.com/embed/v2/${tiktokData.collector[i].id}?lang=en-US" 
-                    style="height: 711px; visibility: unset; max-height: 711px;"></iframe>
-                `
+                <blockquote class="tiktok-embed" cite="${tiktokData.collector[i].webVideoUrl}" data-video-id="${tiktokData.collector[i].id}" style="max-width: 605px;min-width: 325px;">
+                    <section></section>
+                </blockquote>
+                <script async src="https://www.tiktok.com/embed.js"></script>`
+
+                // console.log(`url: ${tiktokData.collector[i].webVideoUrl}\nid: ${tiktokData.collector[i].id}`);
 
                 // Insert embed into results section of page
                 results.insertAdjacentHTML('beforeend', tiktokVideo);
@@ -100,9 +103,9 @@ if (youtubeData || redditData || tiktokData) {
             if (i < maxPostsPerPlatform)
                 displayMedia();
 
-        }, 5000)
+        }, 0)
     }
-    
+
     // Call displayMedia function for the first time
     displayMedia();
 

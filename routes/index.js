@@ -35,13 +35,13 @@ router.get('/', async (req, res) => {
 			// Save document to database with default properties
 			await settings.save();
 		}
-		
+
 		// Save maxPostsPerPlatform property in new variable
 		const maxResults = settings.maxPostsPerPlatform;
 
 		// If there is a valid search query (not undefined)...
 		if (searchQuery) {
-			
+
 			// Change search query to a random word if user typed * (wild card)
 			if (searchQuery === "*")
 				searchQuery = randomWords();
@@ -63,9 +63,9 @@ router.get('/', async (req, res) => {
 				stringYoutubeData = JSON.stringify(parsedYoutubeData);
 
 				// Output parsed data to console
-				console.log(parsedYoutubeData);
+				// console.log(parsedYoutubeData);
 			}
-			
+
 			// If user selected to see Reddit content, then fetch Reddit data
 			if (settings.selectedPlatforms[1]) {
 				// Call different API endpoints depending on whether user entered $
@@ -74,7 +74,7 @@ router.get('/', async (req, res) => {
 				} else {
 					returnedRedditData = await fetch(`https://www.reddit.com/search.json?q=${searchQuery}&limit=${maxResults}`);
 				}
-				
+
 				// Parse returned data
 				parsedRedditData = await returnedRedditData.json();
 
@@ -82,7 +82,7 @@ router.get('/', async (req, res) => {
 				stringRedditData = JSON.stringify(parsedRedditData);
 
 				// Output parsed data to console
-				console.log(parsedRedditData);
+				// console.log(parsedRedditData);
 			}
 
 			// If user selected to see Tiktok content, then fetch Tiktok data
@@ -92,23 +92,30 @@ router.get('/', async (req, res) => {
 				if (searchQuery === "$")
 					searchQuery = 'trending';
 
-				// Get parsed data from Tiktok scraper
-				parsedTiktokData = await TikTokScraper.user(searchQuery, {
+
+				parsedTiktokData = await TikTokScraper.hashtag(searchQuery, {
 					number: maxResults,
 					sessionList: ['sid_tt=58ba9e34431774703d3c34e60d584475;']
 				});
-				
+
+
+				// Get parsed data from Tiktok scraper
+				// parsedTiktokData = await TikTokScraper.user(searchQuery, {
+				// 	number: maxResults,
+				// 	sessionList: ['sid_tt=58ba9e34431774703d3c34e60d584475;']
+				// });
+
 				// Stringify data to be passed to EJS template
 				stringTiktokData = JSON.stringify(parsedTiktokData);
-				
+
 				// Output parsed data to console
-				console.log(parsedTiktokData);
+				// console.log(parsedTiktokData);
 			}
 		}
 
 		// Render index page, passing in context
-		res.render('index', {searchQuery: searchQuery, stringYoutubeData: stringYoutubeData, stringRedditData: stringRedditData, stringTiktokData: stringTiktokData, settings: settings});
-	
+		res.render('index', { searchQuery: searchQuery, stringYoutubeData: stringYoutubeData, stringRedditData: stringRedditData, stringTiktokData: stringTiktokData, settings: settings });
+
 	} catch (err) {
 		// Catch errors and output to console
 		console.log(err);
@@ -141,7 +148,7 @@ router.post('/', async (req, res) => {
 	} else {
 		// Otherwise, simply redirect to regular home route
 		res.redirect('/');
-	}	
+	}
 });
 
 module.exports = router;
