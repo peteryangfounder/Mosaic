@@ -38,7 +38,11 @@ The goal with Unit 12 was to brush up on web development concepts—in preparati
 * [Completed Project](https://mysterious-woodland-97111.herokuapp.com/)
 
 #### Video Walkthrough:
-https://www.loom.com/share/083e26c05e4040c98397f5b181230318
+
+
+https://user-images.githubusercontent.com/52507573/158004973-065de364-cf45-4b70-9e27-c321c67838ab.mp4
+
+
 
 ### Unit 13: Experimenting with APIs
 The goal with Unit 13 was to test the YouTube, Reddit, and TikTok APIs by developing a watered down version of Mosaic. The envisioned application would be able to query for content by keyword, output the returned data to the console, and visually display the content to the user.
@@ -47,7 +51,11 @@ The goal with Unit 13 was to test the YouTube, Reddit, and TikTok APIs by develo
 * [Completed Project](https://blooming-wave-19232.herokuapp.com/)
 
 #### Video Walkthrough:
-https://www.loom.com/share/0d8c34608c924417a7d43b2756fbba2a
+
+
+https://user-images.githubusercontent.com/52507573/158005015-a397c2ff-1e8d-4241-a933-0ca52bfc69b2.mp4
+
+
 
 ### Unit 14: Designing with Figma
 The goal with Unit 14 was to design a high-fidelity mockup for Mosaic prior to implementing it with code. This way, the entire user interface could be laid out in advance, smoothening the development workflow.
@@ -56,7 +64,11 @@ The goal with Unit 14 was to design a high-fidelity mockup for Mosaic prior to i
 * [Figma File](https://www.figma.com/file/0IXYGYOIt1iB0TKRptHGUe/ICS4U-Final-Project-Mosaic?node-id=0%3A1)
 
 #### Video Walkthrough:
-https://www.loom.com/share/27b019002b0f47c0913abdb211197005
+
+
+https://user-images.githubusercontent.com/52507573/158005062-f4acb9b6-9776-4226-86b4-df1b501ef79b.mp4
+
+
 
 ### Unit 15: Software Development Process
 The goal with Unit 15 was to write up the Software Development Process (SWDP) document corresponding to the final project. This document would serve to gain a deeper insight into the project by distilling it into 6 distinct stages: Problem Definition, Analysis, Design, Implementation (left out for now), Testing/Verification, Maintenance.
@@ -80,7 +92,11 @@ Here, too, external documentation could be added to the GitHub repository—look
 * [Mosaic Completed Project](https://protected-cove-21401.herokuapp.com/)
 
 #### Video Walkthrough:
-https://www.loom.com/share/a9e3ef8defb44a33927db6986751be87
+
+
+https://user-images.githubusercontent.com/52507573/158005503-2d24b86c-c24f-4394-a77a-8de82dacfe06.mp4
+
+
 
 ## Limitations/Challenges
 Overall, the project was a great success! All of the envisioned features were implemented, and better yet, implemented with *style*. 
